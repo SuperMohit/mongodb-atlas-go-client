@@ -1,0 +1,170 @@
+# LiveMigrationResponseView
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Id** | Pointer to **string** | Unique 24-hexadecimal digit string that identifies the migration job. | [optional] [readonly] 
+**LagTimeSeconds** | Pointer to **NullableInt64** | Replication lag between the source and destination clusters. Atlas returns this setting only during an active migration, before the cutover phase. | [optional] [readonly] 
+**MigrationHosts** | Pointer to **[]string** | List of hosts running MongoDB Agents. These Agents can transfer your MongoDB data between one source and one target cluster. | [optional] [readonly] 
+**ReadyForCutover** | Pointer to **bool** | Flag that indicates the migrated cluster can be cut over to MongoDB Atlas. | [optional] [readonly] 
+**Status** | Pointer to **string** | Progress made in migrating one cluster to MongoDB Atlas.  | Status   | Explanation | |----------|-------------| | NEW      | Someone scheduled a local cluster migration to MongoDB Atlas. | | FAILED   | The cluster migration to MongoDB Atlas failed.                | | COMPLETE | The cluster migration to MongoDB Atlas succeeded.             | | EXPIRED  | MongoDB Atlas prepares to begin the cut over of the migrating cluster when source and target clusters have almost synchronized. If &#x60;\&quot;readyForCutover\&quot; : true&#x60;, this synchronization starts a timer of 120 hours. You can extend this timer. If the timer expires, MongoDB Atlas returns this status. | | WORKING  | The cluster migration to MongoDB Atlas is performing one of the following tasks:&lt;ul&gt;&lt;li&gt;Preparing connections to source and target clusters&lt;/li&gt;&lt;li&gt;Replicating data from source to target&lt;/li&gt;&lt;li&gt;Verifying MongoDB Atlas connection settings&lt;/li&gt;&lt;li&gt;Stopping replication after the cut over&lt;/li&gt;&lt;/ul&gt; |  | [optional] [readonly] 
+
+## Methods
+
+### NewLiveMigrationResponseView
+
+`func NewLiveMigrationResponseView() *LiveMigrationResponseView`
+
+NewLiveMigrationResponseView instantiates a new LiveMigrationResponseView object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewLiveMigrationResponseViewWithDefaults
+
+`func NewLiveMigrationResponseViewWithDefaults() *LiveMigrationResponseView`
+
+NewLiveMigrationResponseViewWithDefaults instantiates a new LiveMigrationResponseView object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *LiveMigrationResponseView) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *LiveMigrationResponseView) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *LiveMigrationResponseView) SetId(v string)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *LiveMigrationResponseView) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
+### GetLagTimeSeconds
+
+`func (o *LiveMigrationResponseView) GetLagTimeSeconds() int64`
+
+GetLagTimeSeconds returns the LagTimeSeconds field if non-nil, zero value otherwise.
+
+### GetLagTimeSecondsOk
+
+`func (o *LiveMigrationResponseView) GetLagTimeSecondsOk() (*int64, bool)`
+
+GetLagTimeSecondsOk returns a tuple with the LagTimeSeconds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLagTimeSeconds
+
+`func (o *LiveMigrationResponseView) SetLagTimeSeconds(v int64)`
+
+SetLagTimeSeconds sets LagTimeSeconds field to given value.
+
+### HasLagTimeSeconds
+
+`func (o *LiveMigrationResponseView) HasLagTimeSeconds() bool`
+
+HasLagTimeSeconds returns a boolean if a field has been set.
+
+### SetLagTimeSecondsNil
+
+`func (o *LiveMigrationResponseView) SetLagTimeSecondsNil(b bool)`
+
+ SetLagTimeSecondsNil sets the value for LagTimeSeconds to be an explicit nil
+
+### UnsetLagTimeSeconds
+`func (o *LiveMigrationResponseView) UnsetLagTimeSeconds()`
+
+UnsetLagTimeSeconds ensures that no value is present for LagTimeSeconds, not even an explicit nil
+### GetMigrationHosts
+
+`func (o *LiveMigrationResponseView) GetMigrationHosts() []string`
+
+GetMigrationHosts returns the MigrationHosts field if non-nil, zero value otherwise.
+
+### GetMigrationHostsOk
+
+`func (o *LiveMigrationResponseView) GetMigrationHostsOk() (*[]string, bool)`
+
+GetMigrationHostsOk returns a tuple with the MigrationHosts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMigrationHosts
+
+`func (o *LiveMigrationResponseView) SetMigrationHosts(v []string)`
+
+SetMigrationHosts sets MigrationHosts field to given value.
+
+### HasMigrationHosts
+
+`func (o *LiveMigrationResponseView) HasMigrationHosts() bool`
+
+HasMigrationHosts returns a boolean if a field has been set.
+
+### GetReadyForCutover
+
+`func (o *LiveMigrationResponseView) GetReadyForCutover() bool`
+
+GetReadyForCutover returns the ReadyForCutover field if non-nil, zero value otherwise.
+
+### GetReadyForCutoverOk
+
+`func (o *LiveMigrationResponseView) GetReadyForCutoverOk() (*bool, bool)`
+
+GetReadyForCutoverOk returns a tuple with the ReadyForCutover field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReadyForCutover
+
+`func (o *LiveMigrationResponseView) SetReadyForCutover(v bool)`
+
+SetReadyForCutover sets ReadyForCutover field to given value.
+
+### HasReadyForCutover
+
+`func (o *LiveMigrationResponseView) HasReadyForCutover() bool`
+
+HasReadyForCutover returns a boolean if a field has been set.
+
+### GetStatus
+
+`func (o *LiveMigrationResponseView) GetStatus() string`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *LiveMigrationResponseView) GetStatusOk() (*string, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *LiveMigrationResponseView) SetStatus(v string)`
+
+SetStatus sets Status field to given value.
+
+### HasStatus
+
+`func (o *LiveMigrationResponseView) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
